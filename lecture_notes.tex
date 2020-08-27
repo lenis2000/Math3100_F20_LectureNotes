@@ -1,0 +1,196 @@
+\documentclass[letterpaper,11pt,oneside,reqno]{amsart}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%bibliography
+\usepackage[sorting=nyt,style=alphabetic,backend=bibtex,hyperref=true,doi=false,maxbibnames=9,maxcitenames=4]{biblatex}
+\makeatletter
+\def\blx@maxline{77}
+\makeatother
+\addbibresource{~/Dropbox/BiBTeX/bib.bib}
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%main packages
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=red]{hyperref}
+\usepackage{graphicx,color}
+\usepackage{upgreek}
+\usepackage[mathscr]{euscript}
+
+%equations
+\allowdisplaybreaks
+\numberwithin{equation}{section}
+
+%tikz
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,decorations.markings}
+
+%conveniences
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{cleveref}
+\usepackage{enumerate}
+
+%paper geometry
+\usepackage[DIV=13]{typearea}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%draft-specific
+\newcommand{\note}[1]{ {\color{blue}\textsf{(#1)}}}
+\synctex=1
+% \usepackage{refcheck,comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%this paper specific
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{theorem}[proposition]{Theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{remark}[proposition]{Remark}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{MATH 3100 Fall 2020. Lecture summaries}
+
+% OTHER AUTHORS 
+
+\author{Leonid Petrov}
+
+\date{}
+
+\maketitle
+
+\section{8/25}
+
+Section 1.1 in the textbook.
+
+\begin{enumerate}
+	\item Sample space --- long abstract definition which encompasses 
+		all possible mathematical models of randomness we are going to see in the course
+	\item Examples of sample spaces --- coin tossing, dice rolling. 
+	\item We are discussing finite sample spaces so far.
+		Out of finite sample spaces, a special case is formed by 
+		\emph{finite sample spaces with equally likely outcomes}.
+		In them, we have $\mathsf{P}(\omega)=\dfrac1{\#\Omega}$ for all
+		$\omega\in \Omega$, 
+		and $\mathsf{P}(A)=\dfrac{\#A}{\#\Omega}$ for all events $A$.
+	\item Repeated experiments, sample space $\Omega^n=\Omega\times \ldots\times \Omega $
+		(Cartesian power), where
+		\begin{equation*}
+			\Omega^n = \left\{ (a_1,\ldots,a_n )\colon a_i\in \Omega \right\}
+		\end{equation*}
+		is the space of ordered $n$-tuples of elements from $\Omega$. 
+		The sample space $\Omega^n$ models the experiment corresponding to $\Omega$,
+		repeated (independently) $n$ times.
+	\item Finer point. In uncountable sample spaces, usually it is not possible to 
+		define $\mathsf{P}$ consistently for all subsets. Therefore, 
+		we need to restrict the definition of event to ``good'' subsets of $\Omega$.
+\end{enumerate}
+
+\section{8/27}
+
+Section 1.2 in the textbook.
+
+\begin{enumerate}
+	\item Random sampling. We stay in the scenario with finite sample spaces, 
+		equally likely outcomes. 
+	\item 
+		We discuss three main sampling schemes of $k$ objects out of $n$ objects.
+	\item If we sample with replacement and order matters, then
+		$\#\Omega=n^k$
+	\item If we sample without replacement and order matters, then
+		$$\#\Omega=n(n-1)\ldots(n-k+1)=\dfrac{n!}{(n-k)!}. $$
+		If $k=n$, we talk about random permutations of $n$ objects.
+	\item If we sample without replacement and order does not matter, then
+		$$\#\Omega=\frac{n(n-1)\ldots(n-k+1)}{k!}=\dfrac{n!}{(n-k)!\,k!}=\binom nk .$$
+	\item Hypergeometric distribution. Imagine we have $n$
+		objects separated into a number of types
+		$1,\ldots,L $, and there are $m_j$ objects
+		of type $j$. So that $m_1+\ldots+m_L =n$.
+		Sample $k$ objects at random from $n$.
+		The probability that in this sample there 
+		are $p_j$ objects of type $j$ is equal to 
+		\begin{equation*}
+			\frac{\dbinom{m_1}{p_1}\ldots\dbinom{p_L}{m_L} }{\dbinom nk},
+		\end{equation*}
+		where $p_1+\ldots+p_L=k $.
+
+\end{enumerate}
+
+
+\section{9/1}
+
+
+
+\section{9/3}
+\section{9/8}
+\section{9/10}
+\section{9/15}
+\section{9/17}
+\section{9/24}
+\section{9/29}
+\section{10/1}
+\section{10/6}
+\section{10/8}
+\section{10/13}
+\section{10/15}
+\section{10/20}
+\section{10/27}
+\section{10/29}
+\section{11/3}
+\section{11/5}
+\section{11/10}
+\section{11/12}
+\section{11/17}
+\section{11/19}
+\section{11/24}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
